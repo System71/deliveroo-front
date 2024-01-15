@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/HEader";
+import Header from "./components/Header";
 import Menu from "./components/Menu";
 import RestaurantInfos from "./components/RestaurantInfos";
 import { useState, useEffect } from "react";
