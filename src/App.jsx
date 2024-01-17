@@ -6,11 +6,13 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Cart from "./components/Cart";
 library.add(faStar);
 
 function App() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,11 +37,11 @@ function App() {
       <Header />
       <RestaurantInfos data={data} />
       <main>
-        <div className="main-container crawler  ">
+        <div className="main-container crawler">
           <div className="menu">
-            <Menu data={data} />
+            <Menu data={data} cart={cart} setCart={setCart} />
           </div>
-          <div className="cart"></div>
+          <Cart data={data} cart={cart} setCart={setCart} />
         </div>
       </main>
     </div>

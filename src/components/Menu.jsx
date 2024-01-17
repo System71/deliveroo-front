@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Menu = ({ data }) => {
+const Menu = ({ data, cart, setCart }) => {
+  const addToCart = (meal) => {
+    const newMeal = { name: meal.title, price: meal.price, quantity: 1 };
+    setCart([...cart, newMeal]);
+  };
+
   return data.categories.map((cat) => {
     return (
       <section>
@@ -8,7 +13,12 @@ const Menu = ({ data }) => {
         <div className="meals">
           {cat.meals.map((meal) => {
             return (
-              <div className="menu-item">
+              <div
+                className="menu-item"
+                onClick={() => {
+                  addToCart(meal);
+                }}
+              >
                 <div className="menu-item-text">
                   <h3>{meal.title}</h3>
                   <p>{meal.description}</p>
