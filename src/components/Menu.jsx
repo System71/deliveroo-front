@@ -1,19 +1,37 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Menu = ({ data, cart, setCart }) => {
+  //Fonction pour ajouter au panier au clique sur les items
   const addToCart = (meal) => {
-    const newMeal = { name: meal.title, price: meal.price, quantity: 1 };
-    setCart([...cart, newMeal]);
+    const found = cart.findIndex((elt) => elt.id === meal.id);
+
+    if (found !== -1) {
+      const copyCart = [...cart];
+      copyCart[found].quantity++;
+      setCart(copyCart);
+    } else {
+      const newMeal = {
+        name: meal.title,
+        price: meal.price,
+        quantity: 1,
+        id: meal.id,
+      };
+      setCart([...cart, newMeal]);
+    }
   };
 
-  return data.categories.map((cat) => {
+  return data.categories.map((cat, index) => {
+    // cat.meals.length!==0 &&
+
     return (
-      <section>
+      //Que mettre en key à part index? name?
+      <section key={index}>
         <h2>{cat.name}</h2>
         <div className="meals">
           {cat.meals.map((meal) => {
             return (
               <div
+                key={meal.id}
                 className="menu-item"
                 onClick={() => {
                   addToCart(meal);

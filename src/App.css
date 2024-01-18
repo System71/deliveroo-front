@@ -1,3 +1,6 @@
+@import "./assets/css/fonts.css";
+@import "./assets/css/icons.css";
+
 /* ===== GENERAL ===== */
 
 .container {
@@ -142,7 +145,6 @@ main {
   gap: 10px;
   font-size: 12px;
   font-weight: bold;
-  color: #ff8000;
 }
 
 /* ===== CART ===== */
@@ -151,13 +153,15 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 350px;
+  width: 350px;
   /* min-height: 190px; */
   height: 190px;
   max-height: max-content;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
+  position: sticky;
+  top: 30px;
 }
 
 .cart button {
@@ -173,20 +177,37 @@ main {
 
 .cart-content {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
-  border: green 1px solid;
+  flex-grow: 1;
 }
 
 .cart-item {
   display: flex;
+  align-items: center;
   width: 100%;
   justify-content: space-between;
-  border: red 1px solid;
+  margin: 10px 5px;
 }
 
 .left-cart {
   display: flex;
+  align-items: center;
+}
+
+.left-cart button {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #808484;
+  flex-grow: 1;
 }
 
 /* ===== RESPONSIVE ===== */
