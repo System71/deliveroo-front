@@ -38,9 +38,13 @@ h3 {
 /* ===== HEADER ===== */
 
 header {
-  padding: 10px 0px;
+  padding: 10px 0;
   border-bottom: 1px #e9ebeb solid;
   width: 100%;
+}
+
+.top-bar {
+  margin: 0 15px;
 }
 
 header img {
@@ -51,10 +55,11 @@ header img {
 
 .restaurant-infos {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 30px 0;
   gap: 65px;
+  margin: 0 15px;
 }
 
 .infos-text p {
@@ -78,11 +83,11 @@ main {
 
 .main-container {
   display: flex;
+  gap: 15px;
 }
 
 .menu {
   flex: 2.5;
-  margin-right: 15px;
 }
 
 .menu section {
@@ -154,9 +159,8 @@ main {
   flex-direction: column;
   align-items: center;
   width: 350px;
-  /* min-height: 190px; */
-  height: 190px;
-  max-height: max-content;
+  min-height: 190px;
+  height: fit-content;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
@@ -173,6 +177,7 @@ main {
   background-color: #bac3c3;
   width: 100%;
   padding: 16px 0px;
+  margin-bottom: 20px;
 }
 
 .cart-content {
@@ -181,6 +186,7 @@ main {
   flex-direction: column;
   width: 100%;
   flex-grow: 1;
+  gap: 20px;
 }
 
 .cart-item {
@@ -188,7 +194,7 @@ main {
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  margin: 10px 5px;
+  margin: 0 5px;
 }
 
 .left-cart {
@@ -199,7 +205,7 @@ main {
 .left-cart button {
   width: 25px;
   height: 25px;
-  margin: 5px;
+  /* margin: 5px; */
 }
 
 .empty-cart {
@@ -210,11 +216,54 @@ main {
   flex-grow: 1;
 }
 
+.sum {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px #d1d7d7 solid;
+  padding-top: 20px;
+}
+
+.delivery {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px #d1d7d7 solid;
+  padding: 20px 0;
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
   .main-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cart {
+    position: sticky;
+    height: auto;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .cart > button {
+    height: 60px;
+  }
+
+  .cart-content,
+  .empty-cart {
+    display: none;
   }
 }
 
@@ -243,11 +292,4 @@ main {
 }
 
 @media (max-width: 1250px) {
-  .restaurant-infos {
-    padding: 30px 15px;
-  }
-
-  main {
-    padding: 30px 15px;
-  }
 }
