@@ -150,6 +150,7 @@ main {
   gap: 10px;
   font-size: 12px;
   font-weight: bold;
+  color: #ff8000;
 }
 
 /* ===== CART ===== */
@@ -200,12 +201,22 @@ main {
 .left-cart {
   display: flex;
   align-items: center;
+  color: #2e3333;
 }
 
 .left-cart button {
   width: 25px;
   height: 25px;
   /* margin: 5px; */
+}
+
+.left-cart p {
+  margin: 0 5px;
+}
+
+.left-cart i {
+  color: #00cdbd;
+  font-size: 22px;
 }
 
 .empty-cart {
@@ -228,11 +239,13 @@ main {
   justify-content: space-between;
   border-top: 1px #d1d7d7 solid;
   padding-top: 20px;
+  color: #2e3333;
 }
 
 .delivery {
   display: flex;
   justify-content: space-between;
+  color: #2e3333;
 }
 
 .total {
@@ -240,6 +253,8 @@ main {
   justify-content: space-between;
   border-top: 1px #d1d7d7 solid;
   padding: 20px 0;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 /* ===== RESPONSIVE ===== */

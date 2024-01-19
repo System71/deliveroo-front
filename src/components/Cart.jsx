@@ -39,9 +39,15 @@ const Cart = ({ cart, setCart }) => {
             return (
               <div key={meal.id} className="cart-item">
                 <div className="left-cart">
-                  <button onClick={() => removeQuantity(index)}>-</button>
+                  <i
+                    className="icon-minus"
+                    onClick={() => removeQuantity(index)}
+                  ></i>
                   <p>{meal.quantity}</p>
-                  <button onClick={() => addQuantity(index)}>+</button>
+                  <i
+                    className="icon-plus"
+                    onClick={() => addQuantity(index)}
+                  ></i>
                   <p>{meal.name}</p>
                 </div>
                 <p>{meal.price * meal.quantity} €</p>

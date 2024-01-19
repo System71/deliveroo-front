@@ -44,7 +44,7 @@ const Menu = ({ data, cart, setCart }) => {
                       <span>{meal.price} €</span>
                       {meal.popular && (
                         <span id="popular">
-                          <FontAwesomeIcon icon="star" />
+                          <i className="icon-STAR_FILL"></i>
                           <aside>Populaire</aside>
                         </span>
                       )}

@@ -41,7 +41,7 @@ function App() {
           <div className="menu">
             <Menu data={data} cart={cart} setCart={setCart} />
           </div>
-          <Cart data={data} cart={cart} setCart={setCart} />
+          <Cart cart={cart} setCart={setCart} />
         </div>
       </main>
     </div>
